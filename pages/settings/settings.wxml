@@ -12,18 +12,22 @@
     <view class="book-choose" bindtap='showModal'>
       <button>词书选择</button>
     </view>
+
+    <view class='word_learn_info'>
+      <button>学习记录</button>
+    </view>
+    
+    <view class='word_learn_info' bindtap='connect'>
+      <button>连接测试</button>
+    </view>
   </view>
 
-  <view animation='{{animationData}}' class='buydes-dialog-container' wx:if='{{flag}}'>
-    <view class='flex-box'>
-      <view class='class="buydes-dialog-container-bottom"'>
+  <view animation='{{animationData}}' class='dialog-container' wx:if='{{flag}}'>
+      <view class='class="wordbook-bottom"'>
         <block wx:for="{{['四级','六级','取消']}}">
-          <view bindtap="hideModal" class="buydes-dialog-container-bottom-item" >{{item}}</view>  
+          <view bindtap="hideModal" class="container-bottom-item" >{{item}}</view>  
         </block>
       </view>
-
-      
-    </view>
   </view>
 
 </view>

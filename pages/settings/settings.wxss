@@ -57,7 +57,17 @@
   width: 100%;
 }
 
-.buydes-dialog-container{  
+.book-choose{
+  width: 50%;
+  margin-left: 25%;
+}
+
+.word_learn_info{
+  width: 50%;
+  margin-left: 25%;
+}
+
+.dialog-container{  
     width: 100%;  
     height: 100%;   
     background-color:rgba(15, 15, 26, 0.7);  
@@ -65,20 +75,16 @@
     z-index: 999;   
 } 
 
-.flex-box{
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: flex-start;
-}
 
-.buydes-dialog-container-bottom{  
+
+.wordbook-bottom{  
     display: flex;  
     flex-grow: 0;  
     flex-direction: column;
-    background-color: #ffffff;
+    background-color: #fff;
 }  
   
-.buydes-dialog-container-bottom-item{  
+.container-bottom-item{  
     padding:100rpx;  
     display: flex;  
     justify-content: center;  
