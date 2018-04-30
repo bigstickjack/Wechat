@@ -1,5 +1,8 @@
 //app.js
+var userinfo=require('/data/userinfo.js')
 App({
+  data:{
+  },
   onLaunch: function () {
     //调用API从本地缓存中获取数据
     var logs = wx.getStorageSync('logs') || []
@@ -9,10 +12,10 @@ App({
       success:function(res){
         if(res.code){
           wx.request({
-            url: 'https://orange666.xyz',
+            url: 'https://orange666.xyz/login',
             data:{code:res.code},
             success: function(res) {
-             // console.log(res.data)
+              userinfo.id=res.data
               }
             })
            } else {
@@ -21,6 +24,7 @@ App({
       }
     })
 
+    
   },
   getUserInfo:function(cb){
     var that = this
@@ -44,3 +48,4 @@ App({
     userInfo:null
   }
 })
+

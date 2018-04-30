@@ -1,16 +1,18 @@
 {
   "pages": [
-    "pages/word/word",
+    "pages/study/start/start",
     "pages/search/search",
     "pages/settings/settings",
-    "pages/search/detail/detail"
+    "pages/search/detail/detail",
+    "pages/study/word/word",
+    "pages/study/learn/learn"
   ],
   "tabBar": {
     "backgroundColor": "#F7F7FA",
     "borderStyle": "white",
     "list": [
       {
-        "pagePath": "pages/word/word",
+        "pagePath": "pages/study/start/start",
         "text": "单词",
         "iconPath": "images/home.png",
         "selectedIconPath": "images/home-selected.png"

@@ -1,0 +1,4 @@
+<!--pages/study/start/start.wxml-->
+
+<button catchtap='toStudy'>学习</button>
+<button catchtap='toTest'>测试</button>
