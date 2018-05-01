@@ -59,7 +59,7 @@ Page({
          url: 'https://orange666.xyz/log',
          data: log,
          success: function(res) {
-           console.log(res)
+           console.log('SUCCESS')
          },
          fail: function(error) {
            console.log(error)

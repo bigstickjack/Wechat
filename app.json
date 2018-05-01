@@ -5,7 +5,8 @@
     "pages/settings/settings",
     "pages/search/detail/detail",
     "pages/study/word/word",
-    "pages/study/learn/learn"
+    "pages/study/learn/learn",
+    "pages/settings/word-record/word-record"
   ],
   "tabBar": {
     "backgroundColor": "#F7F7FA",

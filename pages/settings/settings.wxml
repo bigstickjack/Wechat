@@ -13,7 +13,7 @@
       <button>词书选择</button>
     </view>
 
-    <view class='word_learn_info'>
+    <view class='word_learn_info' catchtap='showWordRecord'>
       <button>学习记录</button>
     </view>
     

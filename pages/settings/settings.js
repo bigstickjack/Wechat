@@ -114,20 +114,11 @@ Page({
 
 
 
-  connect(){
-    wx.request({
-      url: 'https://orange666.xyz',
-      data: {
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success: function (res) {
-        console.log(res.data)
-      }
-    })
-  },
 
-
+showWordRecord:function(){
+  wx.navigateTo({
+    url: './word-record/word-record',
+  })
+}
 
 })
