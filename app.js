@@ -1,5 +1,6 @@
 //app.js
 var userinfo=require('/data/userinfo.js')
+var login=require('/utils/login.js')
 App({
   data:{
   },
@@ -8,22 +9,6 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-    wx.login({
-      success:function(res){
-        if(res.code){
-          wx.request({
-            url: 'https://orange666.xyz/login',
-            data:{code:res.code},
-            success: function(res) {
-              userinfo.id=res.data
-              }
-            })
-           } else {
-          console.log('登录失败' + res.errMsg)
-        }
-      }
-    })
-
     
   },
   getUserInfo:function(cb){
@@ -45,7 +30,8 @@ App({
     }
   },
   globalData:{
-    userInfo:null
+    userInfo:null,
+    userid:null,
   }
 })
 

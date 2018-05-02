@@ -1,4 +1,4 @@
-var id='user'
+var id=''
 module.exports={
   id:id
 }

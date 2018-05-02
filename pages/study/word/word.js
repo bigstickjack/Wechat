@@ -1,13 +1,12 @@
 var list = require('../../../data/word-list.js')
 var word_index=require('../../../data/index.js')
-var userinfo=require('../../../data/userinfo.js')
+const app=getApp()
 
 Page({
     data: {
       content:'',
     },
     onLoad: function (options) {
-
 
         var idx = Math.floor(Math.random() * 2000) + 1
         var word = list.wordList[idx]    
@@ -48,18 +47,18 @@ Page({
         date.getDate();
       date = Y + '-' + M + '-' + D;
 
-     
+     console.log('凭证:'+app.globalData.userid)
+
       var log={
          word:this.content,
          date:date,
-         id:userinfo.id
+         id:app.globalData.userid
       };
 
        wx.request({
          url: 'https://orange666.xyz/log',
          data: log,
          success: function(res) {
-           console.log('SUCCESS')
          },
          fail: function(error) {
            console.log(error)

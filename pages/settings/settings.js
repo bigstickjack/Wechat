@@ -112,13 +112,14 @@ Page({
     })
   },
 
+  
 
 
 
-showWordRecord:function(){
-  wx.navigateTo({
-    url: './word-record/word-record',
-  })
-}
+  showWordRecord:function(){
+    wx.navigateTo({
+      url: './word-record/word-record',
+    })
+  }
 
 })
