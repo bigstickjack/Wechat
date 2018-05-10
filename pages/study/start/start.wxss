@@ -1,1 +1,24 @@
 /* pages/study/start/start.wxss */
+.learn_button{
+  display: flex;
+  flex-direction: column;
+  width: 360rpx;
+  height: 140rpx;
+  border: 2rpx solid #353535;
+  border-radius: 180rpx;
+  align-items: center;
+  margin-top: 300rpx;
+  margin-bottom: 37rpx;
+}
+
+.test_button{
+  display: flex;
+  flex-direction: column;
+  width: 360rpx;
+  height: 140rpx;
+  border: 2rpx solid #353535;
+  border-radius: 300rpx;
+  align-items: center;
+  margin-top: 157rpx;
+  margin-bottom: 37rpx;
+}

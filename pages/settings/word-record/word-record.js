@@ -1,5 +1,5 @@
 var app=getApp()
-
+var userinfo=require('../../../data/userinfo.js')
 // pages/settings/word-record/word-record.js
 Page({
 
@@ -7,7 +7,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    wordlog:[{
+      content:'',
+      date:''
+    }]
   },
 
   /**
@@ -15,13 +18,29 @@ Page({
    */
   onLoad: function (options) {
 
+    var that=this;
     wx.request({
       url: 'https://orange666.xyz/getlog',
-      data:{id:app.globalData.id},
+      data:{
+        id:app.globalData.userid,
+        level:userinfo.word_level},
       success:function(res){
-        console.log(res)
+        //console.log(wordlog[0].length);
+        var param={}
+        var str=''
+        for(var i=0;i<res.data[0].length;i++){
+          str='wordlog['+i+'].content'
+          param[str]=res.data[0][i].content
+          str='wordlog['+i+'].level'
+          param[str]=res.data[0][i].level
+          str='wordlog['+i+'].date'
+          param[str]=res.data[0][i].date
+          that.setData(param);      //亟待解决的setData问题，先用变通的方法
+        }
       }
     })
+    console.log(this.wordlog)
+
 
   },
 

@@ -2,8 +2,7 @@ var app = getApp()
 // var qcloud = require('../../wafer2/index');
 var config = require('../../config');
 var animationShowHeight = 300; 
-
-
+var userinfo=require('../../data/userinfo.js')
 
 
 
@@ -112,9 +111,30 @@ Page({
     })
   },
 
+  choose_CET4:function(){
+    userinfo.word_level='CET-4'
+    wx.request({
+      url: 'https://orange666.xyz/word_level_log',
+      data:{
+        userId:app.globalData.userid,
+        word_level:'CET-4',
+        }
+    })
+    this.hideModal()
+  },
+
+  choose_CET6:function(){
+    userinfo.word_level='CET-6'
+    wx.request({
+      url: 'https://orange666.xyz/word_level_log',
+      data:{
+        userId:app.globalData.userid,
+        word_level:'CET-6'
+      }
+    })
+    this.hideModal()
+  },
   
-
-
 
   showWordRecord:function(){
     wx.navigateTo({

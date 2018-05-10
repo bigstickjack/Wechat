@@ -5,7 +5,7 @@
     "pages/settings/settings",
     "pages/search/detail/detail",
     "pages/study/word/word",
-    "pages/study/learn/learn",
+    "pages/study/test/test",
     "pages/settings/word-record/word-record"
   ],
   "tabBar": {

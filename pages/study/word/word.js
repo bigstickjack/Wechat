@@ -1,17 +1,33 @@
+
 var list = require('../../../data/word-list.js')
 var word_index=require('../../../data/index.js')
 const app=getApp()
+var userinfo=require('../../../data/userinfo.js')
+var Promise = require('../../../utils/Promise.js')
+var wxRequest = Promise.wxPromisify(wx.request)
 
 Page({
     data: {
-      content:'',
+      no:null,
+      wordlist:null
     },
     onLoad: function (options) {
+        var that = this
 
-        var idx = Math.floor(Math.random() * 2000) + 1
-        var word = list.wordList[idx]    
-        this.content=word.content
-        this.setData({
+      // console.log(userinfo.word_level)
+        if (userinfo.word_level=='CET-4'){
+          that.setData({wordlist:list.wordList_CET4})
+          var idx = Math.floor(Math.random() * 3162) + 1
+        }
+        else if (userinfo.word_level=='CET-6'){
+          that.setData({wordlist:list.wordList_CET6})
+          var idx = Math.floor(Math.random() * 1286) + 1
+        }
+
+
+        that.setData({no:idx})
+        var word = that.data.wordlist[idx]   
+        that.setData({
             content: word.content,
             pron: word.pron,
             definition: word.definition,
@@ -26,6 +42,8 @@ Page({
     },
 
     next: function () {
+
+      var that=this
 
       var timestamp =
         Date.parse(new Date());
@@ -46,13 +64,13 @@ Page({
         < 10 ? '0' + date.getDate() :
         date.getDate();
       date = Y + '-' + M + '-' + D;
-
-     console.log('凭证:'+app.globalData.userid)
-
+  //console.log('单词:'+that.data.content)
       var log={
-         word:this.content,
+         word:that.data.content,
          date:date,
-         id:app.globalData.userid
+         id:app.globalData.userid,
+         no:that.data.no,
+         level:userinfo.word_level
       };
 
        wx.request({
@@ -64,16 +82,21 @@ Page({
            console.log(error)
          },
        })
+      
 
-
-        this.setData({
+        that.setData({
             showNot: false
         })
-        var idx = Math.floor(Math.random() * 2000) + 1
-        var word = list.wordList[idx]  
-        this.content=word.content  
+        if (userinfo.word_level == 'CET-4') {
+          var idx = Math.floor(Math.random() * 3162) + 1
+        }
+        else if (userinfo.word_level == 'CET-6') {
+          var idx = Math.floor(Math.random() * 1286) + 1
+        }
+        that.setData({no:idx})
+        var word = that.data.wordlist[idx]  
     
-        this.setData({
+        that.setData({
             content: word.content,
             pron: word.pron,
             definition: word.definition,
