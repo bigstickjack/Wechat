@@ -1,6 +1,6 @@
 //app.js
 var userinfo=require('/data/userinfo.js')
-var login=require('/utils/login.js')
+
 App({
   data:{
   },

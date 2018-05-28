@@ -1,4 +1,4 @@
-<view class="container">
+<!-- <view class="container">
     <text class="word-content">{{content}}</text>
     <view class="pron-container">
       <image class="pron-icon" src="/images/pron-icon.png"></image>
@@ -11,4 +11,9 @@
     <view class="button-next" catchtap="next">
       <text class="word-next" catchtap="next">下一个</text>
     </view>
+</view> -->
+
+
+<view wx:for='{{wordlist}}'>
+  {{item.content}}  {{item.definition}}  
 </view>

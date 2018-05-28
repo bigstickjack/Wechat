@@ -17,6 +17,9 @@
       <button>学习记录</button>
     </view>
     
+    <view class='test' catchtap='test'>
+      <button>测试</button>
+    </view>
 
   </view>
 

@@ -1,6 +1,4 @@
 var app=getApp()
-var list=require('../../../data/word-list.js')
-var word_learned=require('../../../data/word_learned.js')
 var Promise = require('../../../utils/Promise.js')
 var wxRequest = Promise.wxPromisify(wx.request)
 var userinfo=require('../../../data/userinfo.js')
@@ -33,7 +31,7 @@ Page({
       else{
         var word=list.wordList_CET6[wordno];
       }
-console.log(wordno)
+//console.log(wordno)
       that.setData({
         content: word.content,
         pron: word.pron,

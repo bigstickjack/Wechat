@@ -1,9 +1,8 @@
-var app = getApp()
-// var qcloud = require('../../wafer2/index');
-var config = require('../../config');
-var animationShowHeight = 300; 
+var app = getApp();
+var config = require('../../config')
+var animationShowHeight = 300
 var userinfo=require('../../data/userinfo.js')
-
+// var co=require('co')
 
 
 Page({
@@ -121,6 +120,27 @@ Page({
         }
     })
     this.hideModal()
+
+    wx.downloadFile({
+      url:'https://orange666.xyz/getbook/CET-4',
+      success:function(res){
+        wx.saveFile({
+          tempFilePath: res.tempFilePath,
+          success:function(res){
+             
+          }
+        })
+      }
+    })
+  },
+
+  test:function(){
+    var file=[]
+     wx.getSavedFileList({
+       success:function(res){
+         console.log(res.fileList)
+       }
+     })
   },
 
   choose_CET6:function(){

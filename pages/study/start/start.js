@@ -1,6 +1,5 @@
 // pages/study/start/start.js
 const app=getApp()
-var login=require('../../../utils/login.js')
 var Promise=require('../../../utils/Promise.js')
 var wxRequest = Promise.wxPromisify(wx.request)
 var userinfo=require('../../../data/userinfo.js')
@@ -24,7 +23,6 @@ Page({
               data: { userId: app.globalData.userid },
               success: function (res) {
                 userinfo.word_level=res.data.word_level;
-                 console.log(res.data.word_level)
               }
             })
           })
