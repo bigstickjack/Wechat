@@ -1,4 +1,4 @@
-var Promise = require('es6Promise.min.js')  //我用了es6Promise.js
+var Promise = require('es6Promise.min.js')  
 
 function wxPromisify(fn) {
   return function (obj = {}) {

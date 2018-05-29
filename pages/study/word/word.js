@@ -14,7 +14,7 @@ Page({
       }]
     },
      onLoad:function(){
-          var that=this
+          var that=this;
           if(wx.getStorageSync('word')==''){
             wx.request({
               url: 'https://orange666.xyz/getword',
@@ -25,6 +25,7 @@ Page({
               success:function(res){
                 var param = {}
                 var str = ''
+          //      console.log(res.data)
                 for (var i = 0; i < res.data.length; i++) {
                   str = 'wordlist[' + i + '].content'
                   param[str] = res.data[i].content
@@ -33,7 +34,7 @@ Page({
                   str = 'wordlist[' + i + '].pron'
                   param[str] = res.data[i].pron
                   that.setData(param);      //亟待解决的setData问题，先用变通的方法
-                }
+               }
                 
               }
             })
