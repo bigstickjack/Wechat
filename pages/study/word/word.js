@@ -10,8 +10,10 @@ Page({
       wordlist:[{
         content:'',
         definition:'',
-        pron:''
-      }]
+        pron:'',
+      }],
+      text_left:'left',
+      text_right:'right'
     },
      onLoad:function(){
           var that=this;
@@ -33,58 +35,22 @@ Page({
                   param[str] = res.data[i].definition
                   str = 'wordlist[' + i + '].pron'
                   param[str] = res.data[i].pron
-                  that.setData(param);      //亟待解决的setData问题，先用变通的方法
+                  that.setData(param);      //亟待解决的setData问题，先用变通的方式
                }
-                
               }
             })
           }
 
+          
+     },
 
-     }
-      
-        
-        // var that = this;
-        // wx.request({
-        //     url: 'https://api.shanbay.com/bdc/search/?word=' + word,
-        //     data: {},
-        //     method: 'GET',
-        //     success: function (res) {
-        //         console.log(res)
-        //         that.setData({
-        //             content: res.data.data.content,
-        //             audio: res.data.data.audio_addresses.us[0],
-        //             pron: res.data.data.pron,
-        //             definition: res.data.data.definition
-        //         })
-        //         // wx.downloadFile({
-        //         //     url: res.data.data.audio_addresses.us[0], 
-        //         //     success: function (res) {
-        //         //         wx.playVoice({
-        //         //             filePath: res.tempFilePath
-        //         //         })
-        //         //     }
-        //         // })
-        //     },
-        //     fail: function () {
-        //     },
-        //     complete: function () {
-        //     }
-        // })
-   // },
-    // read: function () {
-    //     console.log(this.data.audio)
-    //     wx.playVoice({
-    //         filePath: this.data.audio,
-    //         success: function (res) {
-    //             console.log('ok')
-    //         },
-    //         fail: function () {
-    //             // fail
-    //         },
-    //         complete: function () {
-    //             // complete
-    //         }
-    //     })
-    // }
+    showdetail:function(e){
+      var string=this.data.wordlist[e.target.dataset.tag].definition
+      var cstr = string.replace(/&/g,' ')
+      wx.navigateTo({
+        url: '../detail/detail?content='+this.data.wordlist[e.target.dataset.tag].content+'&definition='+cstr+'&pron='+this.data.wordlist[e.target.dataset.tag].pron
+      })
+    },
+
+
 })

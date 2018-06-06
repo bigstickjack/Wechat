@@ -6,7 +6,9 @@
     "pages/search/detail/detail",
     "pages/study/word/word",
     "pages/study/test/test",
-    "pages/settings/word-record/word-record"
+    "pages/settings/word-record/word-record",
+    "pages/study/over/over",
+    "pages/study/detail/detail"
   ],
   "tabBar": {
     "backgroundColor": "#F7F7FA",

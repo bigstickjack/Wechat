@@ -1,14 +1,33 @@
 <view class="container">
     <text class="word-content">{{content}}</text>
+
     <view class="pron-container">
       <image class="pron-icon" src="/images/pron-icon.png"></image>
       <text class="word-pron" bindtap="read">/{{pron}}/</text>
     </view>
-    <text wx:if="{{showNot}}" class="word-definition">{{definition}}</text>
+    <!-- <text wx:if="{{showNot}}" class="word-definition">{{definition}}</text>
     <view class="button-miss" catchtap="show">
       <text class="word-miss" catchtap="show">不认识</text>
     </view>
     <view class="button-next" catchtap="next">
       <text class="word-next" catchtap="next">下一个</text>
-    </view>
+    </view> -->
 </view>
+
+
+ <!-- <block wx:for='{{choice}}'>
+  <view catchtap='pitchon' data-text='{{item}}' style='background:{{select_box_bg}}'>{{item}}</view>
+</block>  -->
+
+<view catchtap='pitchon' data-text='{{choice[0]}}' data-bg_tag='0' style='border-color:{{select_box_bg[0]}}' class='select_box'>
+    {{choice[0]}}
+</view>
+<view catchtap='pitchon' data-text='{{choice[1]}}' data-bg_tag='1' style='border-color:{{select_box_bg[1]}}' class='select_box'>
+    {{choice[1]}}
+</view>
+<view catchtap='pitchon' data-text='{{choice[2]}}' data-bg_tag='2' style='border-color:{{select_box_bg[2]}}' class='select_box'>
+    {{choice[2]}}
+</view>
+<view catchtap='pitchon' data-text='{{choice[3]}}' data-bg_tag='3' style='border-color:{{select_box_bg[3]}}' class='select_box'>
+    {{choice[3]}}
+</view> 

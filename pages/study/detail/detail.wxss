@@ -1,7 +1,4 @@
-@font-face {
-font-family: Chalkboard;
-src: url('/assets/font/chalkboard.ttf'),
-}
+/* pages/study/detail/detail.wxss */
 
 .container {
   display: flex;
@@ -38,7 +35,7 @@ src: url('/assets/font/chalkboard.ttf'),
 .word-definition {
   margin-top: 194rpx;
   font-family: Yuanti TC;
-  font-size: 30rpx;
+  font-size: 50rpx;
   color: #585858;
 }
 
@@ -77,15 +74,3 @@ src: url('/assets/font/chalkboard.ttf'),
   font-size: 32rpx;
   color: #585858;
 }
-
-.progress{
-  margin-top:200px
-}
-
-
-
-.select_box {  
-  height: 100rpx;
-  margin-top: 100rpx;  
-  border: 2px double white;  
-}  

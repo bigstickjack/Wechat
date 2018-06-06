@@ -1,0 +1,4 @@
+<!--pages/study/over/over.wxml-->
+<view>正确率:{{accuracy/10*100}}%</view>
+<button catchtap='tohome'>返回</button>
+
